@@ -5,6 +5,9 @@ python:
   # - "nightly"
   #- "pypy"
   # - "pypy3"
+arch:
+ - amd64
+ - ppc64le
 sudo: false
 env:
   global:
@@ -29,22 +32,7 @@ env:
     - STRATEGY=REUSABLE SERVER=EDIR DECODER=PYASN1
     #- STRATEGY=REUSABLE SERVER=AD DECODER=INTERNAL
     #- STRATEGY=REUSABLE SERVER=AD DECODER=PYASN1
-    - STRATEGY=SYNC SERVER=EDIR DECODER=INTERNAL
-      arch: ppc64le
-    - STRATEGY=SYNC SERVER=EDIR DECODER=PYASN1
-      arch: ppc64le
-    - STRATEGY=ASYNC SERVER=EDIR DECODER=INTERNAL
-      arch: ppc64le
-    - STRATEGY=ASYNC SERVER=EDIR DECODER=PYASN1
-      arch: ppc64le
-    - STRATEGY=RESTARTABLE SERVER=EDIR DECODER=INTERNAL
-      arch: ppc64le
-    - STRATEGY=RESTARTABLE SERVER=EDIR DECODER=PYASN1
-      arch: ppc64le
-    - STRATEGY=REUSABLE SERVER=EDIR DECODER=INTERNAL
-      arch: ppc64le
-    - STRATEGY=REUSABLE SERVER=EDIR DECODER=PYASN1
-      arch: ppc64le
+    
 install:
   - "pip install ."
   - "pip list"
